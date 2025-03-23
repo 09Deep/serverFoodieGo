@@ -174,10 +174,10 @@ router.post('/login', async (req, res) => {
 
     try {
         // Debug: Log the search query
-        console.log("Searching for:", { email });
+        console.log("Searching for:",  email );
 
         // Find user by email
-        const user = await LoginData.findOne({ email });
+        const user = await LoginData.findOne( email );
 
         // Debug: Log found user
         console.log("Found user:", user);
