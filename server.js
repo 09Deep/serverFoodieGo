@@ -17,6 +17,8 @@ mongoose.connect(mongoURI)
   .then(() => {
     console.log('Connected to MongoDB Atlas!');
 
+    console.log("MongoDB connected to:", mongoose.connection.host);
+    console.log("Using database:", mongoose.connection.name);
     // Middleware to parse incoming JSON data
     app.use(express.json());
 
