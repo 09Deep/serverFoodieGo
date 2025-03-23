@@ -177,7 +177,7 @@ router.post('/login', async (req, res) => {
         console.log("Searching for:",  email );
 
         // Find user by email
-        const user = await LoginData.findOne( {email} );
+        const user = await LoginData.findOne( { email: new RegExp(`^${email}$`, "i") } );
 
         // Debug: Log found user
         console.log("Found user:", user);
