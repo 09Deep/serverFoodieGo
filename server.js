@@ -21,7 +21,8 @@ mongoose.connect(mongoURI)
     app.use(express.json());
 
     // Enable Cross-Origin Resource Sharing (CORS)
-    app.use(cors({ origin: "http://localhost:3000", credentials: true }));
+    app.use(cors({ 
+        origin: ["http://localhost:3000","https://my-foodie-go.vercel.app"], credentials: true }));
 
     // Import routes (auth, restaurants, menu, customers, etc.)
     const authRoutes = require('./routes/auth');
